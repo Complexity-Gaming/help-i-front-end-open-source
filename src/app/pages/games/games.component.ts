@@ -1,8 +1,6 @@
 import { Input,Component, OnInit } from '@angular/core';
 import {HelpiApiService} from 'src/app/services/helpi-api.service';
 import {ActivatedRoute, Router} from "@angular/router";
-import {MatTableDataSource} from "@angular/material/table";
-import {Game} from "../../models/Game";
 
 @Component({
   selector: 'app-games',

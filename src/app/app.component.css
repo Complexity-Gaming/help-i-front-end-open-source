@@ -1,0 +1,9 @@
+.default-spacer {
+  flex: 1 1 auto;
+}
+mat-toolbar{
+  background: #666173;
+}
+a{
+  background: #666173;
+}

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'help-i-front-end-open-source';
+  title = 'learning-center-with-navigation';
 }

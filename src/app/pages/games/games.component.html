@@ -1,10 +1,10 @@
 <section>
   <h1 class="gameChooseTittle">Elige tu juego</h1>
-  <mat-grid-list cols="4" rowHeight="2:1">
+  <mat-grid-list cols="4" rowHeight="1:1">
     <mat-grid-tile *ngFor="let game of games">
-      <div>
-        <img mat-card-image (click)="navigateToGameMenu(game.id)" class="article-img" [src]="game.coverUrl" [alt]="">
-      </div>
+      <img alt="100%" class="gameImage" mat-card-image (click)="navigateToGameMenu(game.id)" [src]="game.coverUrl">
+      <mat-grid-tile-footer>{{game.name}}</mat-grid-tile-footer>
     </mat-grid-tile>
   </mat-grid-list>
+
 </section>

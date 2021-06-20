@@ -1,15 +1,18 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>{{gameData.name}}</mat-card-title>
-  </mat-card-header>
-  <img width="auto" height="500px"  mat-card-image [src]="gameData.coverUrl" alt="Photo of Apex Legends">
-  <mat-card-content>
-    <p>
-      {{gameData.summary}}
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
+<mat-card class="card">
+
+  <mat-grid-list cols="2">
+    <mat-grid-tile>
+      <img class="gameImage" mat-card-image [src]="gameData.coverUrl" alt="Photo of Apex Legends">
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card-content class="summary">
+        <mat-card-title>{{gameData.name}}</mat-card-title>
+        <p>
+          {{gameData.summary}}
+        </p>
+        <br>
+        <button mat-button class="actionBtn">ACTION</button>
+      </mat-card-content>
+    </mat-grid-tile>
+  </mat-grid-list>
 </mat-card>

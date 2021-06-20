@@ -1,5 +1,21 @@
 .gameImage {
-  width: fit-content;
+  height: 500px;
+  width: auto;
   border-radius: inherit;
   margin-bottom: 5%;
 }
+
+.card{
+  background: #ffffff;
+  color: #000000;
+}
+
+.actionBtn{
+  border: 1px solid #888888;
+}
+
+.actionBtn:hover{
+  border: 1px solid #000000;
+  box-shadow: 1px 2px #888888;
+}
+

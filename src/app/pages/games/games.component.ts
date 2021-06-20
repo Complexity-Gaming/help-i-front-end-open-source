@@ -12,13 +12,13 @@ export class GamesComponent implements OnInit {
   constructor(private helpiApi: HelpiApiService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.helpiApi.getAllGames().subscribe((data: { games: any[]; }) => this.games = data['games']);
+    this.helpiApi.getAllGames().subscribe((response: any) => this.games = response);
+    console.log(`games: ${this.games}`);
   }
 
-  navigateToGameMenu(id: number){
+  navigateToGameMenu(id: number): void{
     this.router.navigate([`/games/${id}`])
       .then(() => console.log('Navigated to Game Menu'));
   }
-
 
 }

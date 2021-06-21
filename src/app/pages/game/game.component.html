@@ -2,13 +2,13 @@
 
   <mat-grid-list cols="2">
     <mat-grid-tile>
-      <img class="gameImage" mat-card-image [src]="gameData.coverUrl" alt="Photo of Apex Legends">
+      <img class="gameImage" mat-card-image [src]="gameData.providerInformation.coverUrl" alt="Photo of Apex Legends">
     </mat-grid-tile>
     <mat-grid-tile>
       <mat-card-content class="summary">
-        <mat-card-title>{{gameData.name}}</mat-card-title>
+        <mat-card-title>{{gameData.providerInformation.name}}</mat-card-title>
         <p>
-          {{gameData.summary}}
+          {{gameData.providerInformation.summary}}
         </p>
         <br>
         <button mat-button class="actionBtn">ACTION</button>

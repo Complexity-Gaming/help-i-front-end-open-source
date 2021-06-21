@@ -11,11 +11,11 @@ export class HelpiApiService {
 
   // Get Game by Id
   getGameById(id: number): any {
-    return this.http.get(`https://help-i-api.azurewebsites.net/api/games/${id}`);
+    return this.http.get(`https://hep-i-api.herokuapp.com/api/games/${id}`);
   }
 
   // Get Game Data
   getAllGames():any{
-    return this.http.get(`https://help-i-api.azurewebsites.net/api/games`);
+    return this.http.get(`https://hep-i-api.herokuapp.com/api/games?offset=0&pageNumber=0&pageSize=0&paged=true`);
   }
   }

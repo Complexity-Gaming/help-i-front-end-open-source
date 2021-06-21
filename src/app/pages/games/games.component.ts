@@ -12,7 +12,7 @@ export class GamesComponent implements OnInit {
   constructor(private helpiApi: HelpiApiService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.helpiApi.getAllGames().subscribe((response: any) => this.games = response);
+    this.helpiApi.getAllGames().subscribe((response: any) => this.games = response.content);
     console.log(`games: ${this.games}`);
   }
 

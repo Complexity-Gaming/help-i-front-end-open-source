@@ -31,7 +31,7 @@ export class GameComponent implements OnInit {
     this.gamesApi.getGameById(id)
       .subscribe((response: any) => {
         this.gameData = {} as Game;
-        this.gameData = _.cloneDeep(response.resource);
+        this.gameData = _.cloneDeep(response);
         console.log(response);
         console.log(this.gameData)
       })

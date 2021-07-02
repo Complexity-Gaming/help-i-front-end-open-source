@@ -21,4 +21,9 @@ export class GamesComponent implements OnInit {
       .then(() => console.log('Navigated to Game Menu'));
   }
 
+  navigateToRegister(): void{
+    this.router.navigate([`/register`])
+      .then(() => console.log('Navigated to Register'));
+  }
+
 }

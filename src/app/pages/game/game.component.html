@@ -1,18 +1,42 @@
 <mat-card class="card">
+  <section class="banner">
+    <img alt="Banner" [src]="gameData.providerInformation.coverUrl">
+    <div class="container">
+      <h1>{{gameData.providerInformation.name}}</h1>
+      <button (click)="navigateToExperts()" class="option-button"> Encuentra a tu coach </button>
+      <button (click)="navigateToMaterials()" class="option-button"> Clases basicas </button>
+      <button (click)="navigateToMaterials()" class="option-button"> Clases detalladas </button>
+    </div>
+  </section>
+  <section style="text-align: center">
+    <h2>Bienvenido al menu de {{gameData.providerInformation.name}}</h2>
+    <p>{{gameData.providerInformation.summary}}</p>
+  </section>
 
-  <mat-grid-list cols="2">
-    <mat-grid-tile>
-      <img class="gameImage" mat-card-image [src]="gameData.providerInformation.coverUrl" alt="Photo of Apex Legends">
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-card-content class="summary">
-        <mat-card-title>{{gameData.providerInformation.name}}</mat-card-title>
-        <p>
-          {{gameData.providerInformation.summary}}
-        </p>
-        <br>
-        <button mat-button class="actionBtn">ACTION</button>
-      </mat-card-content>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <section class="experts">
+    <h3>EXPERTOS DESTACADOS</h3>
+    <div class="container">
+      <article *ngFor="let expert of experts.slice(0,3)">
+        <img [src]="expert.personalProfile.profilePictureUrl" alt="url">
+        <h4 style="text-align: center">{{expert.personalProfile.firstName}}</h4><br>
+      </article>
+    </div>
+  </section>
+
+  <section class="training" >
+    <h3>MATERIALES DESTACADOS</h3>
+    <div class="container" style="background-color: #666173; margin: 30px" *ngFor="let trainingMaterial of trainingMaterials.slice(0,2)" >
+      <article>
+        <img class="item-image" [src]="trainingMaterial.videoUri" alt="url">
+      </article>
+      <article style="text-align: right; color: #FFFFFF">
+        <h3>{{trainingMaterial.trainingMaterialId}}</h3>
+        <h5> Fecha de publicacion: {{ trainingMaterial.publishedDate }}
+          Precio: {{trainingMaterial.price}} {{trainingMaterial.currency}}</h5>
+        <p>{{gameData.providerInformation.summary}}</p>
+        <button class="option-button"> Comprar ahora </button>
+        <button class="option-button"> Detalles </button>
+      </article>
+    </div>
+  </section>
 </mat-card>

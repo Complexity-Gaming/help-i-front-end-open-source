@@ -3,6 +3,8 @@ import { HelpiApiService } from '../../services/helpi-api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import {Game} from "../../models/game";
 import * as _ from 'lodash';
+import {Expert} from "../../models/expert";
+import {TrainingMaterial} from "../../models/trainingMaterial";
 
 @Component({
   selector: 'app-game',
@@ -13,6 +15,8 @@ export class GameComponent implements OnInit {
 
   gameId!: number;
   gameData: Game = {} as Game;
+  experts: Array<any> = [];
+  trainingMaterials: Array<any> = [];
 
   constructor(private gamesApi: HelpiApiService, private router: Router, private route: ActivatedRoute) { }
 
@@ -25,6 +29,8 @@ export class GameComponent implements OnInit {
         return id;
       }
     }))
+    this.gamesApi.getExpertsByGameId(this.gameId).subscribe((response: any) => this.experts = response.content);
+    this.gamesApi.getTrainingMaterialGameId(this.gameId).subscribe((response: any) => this.trainingMaterials = response.content);
   }
 
   retrieveGame(id: number): void {
@@ -36,5 +42,14 @@ export class GameComponent implements OnInit {
         console.log(this.gameData)
       })
   }
+  navigateToExperts(): void{
+    this.router.navigate([`/experts`])
+      .then(() => console.log('Navigated to Experts'));
+  }
+  navigateToMaterials(): void{
+    this.router.navigate([`/materials`])
+      .then(() => console.log('Navigated to Materials'));
+  }
+
 
 }

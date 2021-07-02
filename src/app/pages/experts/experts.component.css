@@ -1,7 +1,3 @@
-.card{
-  background: #ffffff;
-  color: #000000;
-}
 .container{
   width: 98%;
   margin: auto;
@@ -10,12 +6,6 @@
 section{
   width: 100%;
   margin-bottom: 25px;
-}
-
-.banner{
-  margin-top: 50px;
-  position: relative;
-  text-align: center;
 }
 
 .banner img{
@@ -36,19 +26,6 @@ section{
   font-size: 28px;
 }
 
-.option-button{
-  display:inline-block;
-  padding:0.3em 1.2em;
-  margin:0 0.3em 0.3em 0;
-  border-radius:2em;
-  box-sizing: border-box;
-  text-decoration:none;
-  font-family:'Roboto',sans-serif;
-  color:#FFFFFF;
-  background-color:#139028;
-  text-align:center;
-}
-
 .experts .container{
   display: flex;
   justify-content: center;
@@ -67,10 +44,8 @@ section{
   border-radius: 300px;
 }
 
-.item-image{
-  width: 100%;
-  height: 100%;
-  position: relative;
+.experts img:hover{
+  transform: translateY(-10px);
 }
 
 .training .container{
@@ -84,8 +59,4 @@ section{
 @media screen and (max-width: 868px) {
   .training .container{
     flex-direction: column;
-  }
-
-}
-
-
+  }}

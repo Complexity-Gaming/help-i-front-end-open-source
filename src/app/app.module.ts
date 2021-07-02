@@ -22,6 +22,15 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { HttpClientModule } from "@angular/common/http";
 import {HelpiApiService} from "./services/helpi-api.service";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ExpertsComponent } from './pages/experts/experts.component';
+import { MaterialsComponent } from './pages/materials/materials.component';
+import { ExpertComponent } from './pages/expert/expert.component';
+import { MaterialComponent } from './pages/material/material.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ApplicationComponent } from './pages/application/application.component';
+import { ApplicationsComponent } from './pages/applications/applications.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +39,16 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     HomeComponent,
     AboutComponent,
     GameComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    RegisterComponent,
+    LoginComponent,
+    ExpertsComponent,
+    MaterialsComponent,
+    ExpertComponent,
+    MaterialComponent,
+    ProfileComponent,
+    ApplicationComponent,
+    ApplicationsComponent
   ],
     imports: [
         BrowserModule,

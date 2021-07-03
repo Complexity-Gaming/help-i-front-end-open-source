@@ -3,18 +3,18 @@
     <img alt="Banner" [src]="gameData.backgroundImageUrl">
     <div class="container">
       <h1>{{gameData.name}}</h1>
-      <button (click)="navigateToExperts()" class="option-button"> Encuentra a tu coach </button>
-      <button (click)="navigateToMaterials()" class="option-button"> Clases basicas </button>
-      <button (click)="navigateToMaterials()" class="option-button"> Clases detalladas </button>
+      <button (click)="navigateToExperts()" class="option-button"> Find your expert </button>
+      <button (click)="navigateToMaterials()" class="option-button"> Basic training </button>
+      <button (click)="navigateToMaterials()" class="option-button"> Advanced training </button>
     </div>
   </section>
   <section style="text-align: center">
-    <h2>Bienvenido al menu de {{gameData.name}}</h2>
+    <h2>Welcome to {{gameData.name}} menu</h2>
     <p>{{gameData.summary}}</p>
   </section>
 
   <section class="experts">
-    <h3>EXPERTOS DESTACADOS</h3>
+    <h3>FAVORITE EXPERTS</h3>
     <div class="container">
       <article *ngFor="let expert of experts.slice(0,3)">
         <img [src]="expert.personalProfile.profilePictureUrl" alt="url">
@@ -24,18 +24,18 @@
   </section>
 
   <section class="training" >
-    <h3>MATERIALES DESTACADOS</h3>
+    <h3>FAVORITE TRAINING MATERIALS</h3>
     <div class="container" style="background-color: #666173; margin: 30px" *ngFor="let trainingMaterial of trainingMaterials.slice(0,2)" >
       <article>
         <img class="item-image" [src]="trainingMaterial.videoUri" alt="url">
       </article>
       <article style="text-align: right; color: #FFFFFF">
         <h3>{{trainingMaterial.trainingMaterialId}}</h3>
-        <h5> Fecha de publicacion: {{ trainingMaterial.publishedDate }}
-          Precio: {{trainingMaterial.price}} {{trainingMaterial.currency}}</h5>
+        <h5> Publication date: {{ trainingMaterial.publishedDate }}
+          Price: {{trainingMaterial.price}} {{trainingMaterial.currency}}</h5>
         <p>{{gameData.summary}}</p>
-        <button class="option-button"> Comprar ahora </button>
-        <button class="option-button"> Detalles </button>
+        <button class="option-button"> Buy now </button>
+        <button class="option-button"> Details </button>
       </article>
     </div>
   </section>

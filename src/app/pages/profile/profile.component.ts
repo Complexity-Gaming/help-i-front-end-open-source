@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.currentUser = this.tokenStorageService.getUser();
     if (this.currentUser) {
-      this.userService.getUserById(this.currentUser.username).subscribe(
+      this.userService.getUserById(this.currentUser.token, this.currentUser.username).subscribe(
         response => {
           console.log(response);
           this.user = response;

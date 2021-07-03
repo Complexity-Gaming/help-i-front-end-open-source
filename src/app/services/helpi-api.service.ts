@@ -28,8 +28,5 @@ export class HelpiApiService {
     return this.http.get(`https://hep-i-api.herokuapp.com/api/games/${gameId}/trainings?offset=0&pageNumber=0&pageSize=0&paged=true`);
   }
 
-  getExpertById(id: number): any {
-    return this.http.get(`https://hep-i-api.herokuapp.com/api/games/${id}`);
-  }
 
 }

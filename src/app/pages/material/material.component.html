@@ -4,14 +4,14 @@
   </section>
 
   <section class="training" >
-    <div class="container" style="background-color: #666173; margin: 30px" ><!--aqui va un ngFor-->
+    <div class="container" style="background-color: #666173; margin: 30px" *ngFor="let material of materials"><!--aqui va un ngFor-->
       <article>
-        <img class="item-image" [src]="" alt="url">
+        <img class="item-image" [src]="material.detail.videoUri" alt="url">
       </article>
       <article style="text-align: right; color: #FFFFFF">
-        <h3>*Id del Training material*</h3>
-        <h5> Fecha de publicacion: *fecha de publicación*
-          Precio: *precio* *moneda*</h5>
+        <h3>{{material.material.trainingId}}</h3>
+        <h5> Publish Date: {{material.detail.publishedDate}}
+          Price: {{material.detail.price.amount}} {{material.detail.price.currency}}</h5>
       </article>
     </div>
   </section>

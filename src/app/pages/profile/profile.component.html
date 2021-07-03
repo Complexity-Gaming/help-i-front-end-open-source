@@ -1,6 +1,6 @@
 <section class="body">
   <div class="fullName">
-    <h1>{{currentUser.username}} </h1>
+    <h1>{{user.name}} </h1>
 
     <hr>
     <div class="text-line">
@@ -9,13 +9,10 @@
 
     <button class="button">Change password</button> <br>
     <hr>
-    <button  class="button" style="color: #139028">Apply to expert</button> <br>
-    <button class="button" style="color: #139028">My applications</button> <br>
-    <button class="button" style="color: #139028">My training materials</button> <br>
+    <button (click)="navigateToApplication(user.id)"  class="button" style="color: #139028">Apply to expert</button> <br>
+    <button (click)="navigateToApplications(user.id)" class="button" style="color: #139028">My applications</button> <br>
+    <button (click)="navigateToMaterial(user.id)"  class="button" style="color: #139028">My training materials</button> <br>
   </div>
 
-  <span class = "avatar">
-    <img [src]="" alt="Avatar">
-  </span>
 </section>
 

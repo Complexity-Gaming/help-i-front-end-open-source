@@ -2,6 +2,7 @@
 // Main Application View
 import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from './services/token-storage.service';
+import {UserService} from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,9 @@ export class AppComponent implements OnInit {
   private roles: string[] | undefined;
   isLoggedIn = false;
   username: string | undefined;
-  constructor(private tokenStorageService: TokenStorageService) {
+  currentUser: any;
+  user: any;
+  constructor(private tokenStorageService: TokenStorageService, private userService: UserService) {
   }
 
   ngOnInit(): void {
@@ -22,6 +25,17 @@ export class AppComponent implements OnInit {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
       this.username = user.username;
+    }
+    this.currentUser = this.tokenStorageService.getUser();
+    if (this.currentUser) {
+      this.userService.getUserByEmail(this.currentUser.username).subscribe(
+        response => {
+          console.log(response);
+          this.user = response;
+        },
+        error => {
+          console.log(error.error.errorMessage);
+        });
     }
   }
   logout(): void {

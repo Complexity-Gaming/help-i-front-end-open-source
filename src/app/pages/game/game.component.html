@@ -1,0 +1,42 @@
+<mat-card class="card">
+  <section class="banner">
+    <img alt="Banner" [src]="gameData.backgroundImageUrl">
+    <div class="container">
+      <h1>{{gameData.name}}</h1>
+      <button (click)="navigateToExperts(gameData.id)" class="option-button"> Find your expert </button>
+      <button (click)="navigateToMaterials(gameData.id)" class="option-button"> Basic training </button>
+      <button (click)="navigateToMaterials(gameData.id)" class="option-button"> Advanced training </button>
+    </div>
+  </section>
+  <section style="text-align: center">
+    <h2>Welcome to {{gameData.name}} menu</h2>
+    <p>{{gameData.summary}}</p>
+  </section>
+
+  <section class="experts">
+    <h3>FAVORITE EXPERTS</h3>
+    <div class="container">
+      <article *ngFor="let expert of experts.slice(0,3)">
+        <img (click)="navigateToExpert(expert.id)" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="url">
+        <h4 style="text-align: center">{{expert.name}}</h4><br>
+      </article>
+    </div>
+  </section>
+
+  <section class="training" >
+    <h3>FAVORITE TRAINING MATERIALS</h3>
+    <div class="container" style="background-color: #666173; margin: 30px" *ngFor="let trainingMaterial of trainingMaterials.slice(0,2)" >
+      <article>
+        <img class="item-image" [src]="trainingMaterial.detail.videoUri" alt="url">
+      </article>
+      <article style="text-align: right; color: #FFFFFF">
+        <h3>{{trainingMaterial.material.trainingId}}</h3>
+        <h5> Publication date: {{ trainingMaterial.detail.publishedDate }}
+          Price: {{trainingMaterial.detail.price.amount}} {{trainingMaterial.detail.price.currency}}</h5>
+        <p>{{gameData.summary}}</p>
+        <button class="option-button"> Buy now </button>
+        <button class="option-button"> Details </button>
+      </article>
+    </div>
+  </section>
+</mat-card>

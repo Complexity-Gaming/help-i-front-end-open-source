@@ -1,0 +1,12 @@
+<section style="text-align: center">
+  <h2>Presenting our experts for {{gameData.name}}</h2>
+</section>
+
+<section class="experts">
+  <div class="container">
+    <article *ngFor="let expert of experts"><!--for experts-->
+      <img (click)="navigateToExpert(expert.id)" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="url">
+      <h4 style="text-align: center">{{expert.name}}</h4>
+    </article>
+  </div>
+</section>

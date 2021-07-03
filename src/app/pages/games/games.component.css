@@ -1,0 +1,69 @@
+*{
+  font-family: 'Roboto', sans-serif;
+}
+.gameImage {
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  opacity:0.8;
+}
+
+.gameChooseTitle {
+  text-align: center;
+  color:  #139028;
+}
+
+.Title {
+  font-size: 300%;
+  font-weight: bolder;
+  color: #139028;
+  text-align: center;
+  margin: 2%;
+}
+
+.gameChooseTitle{
+  font-size: 200%;
+  text-align: center;
+}
+
+button{
+  position: relative;
+  text-align:center;
+  alignment: center;
+  padding:0.3em 1.2em;
+  margin:0 0.3em 0.3em 0;
+  border-radius:2em;
+  box-sizing: border-box;
+  font-weight:300;
+  color:#FFFFFF;
+  background-color:#666173;
+  transition: all 0.2s;
+}
+
+button:hover{
+  color:#666173;
+  background-color:#FFFFFF;
+  cursor: pointer;
+}
+
+.gameCard{
+
+  width: 60px;
+  height: auto;
+}
+
+.gameCard:hover{
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.gameImage:hover{
+  opacity:1;
+}
+.btnRegister{
+  text-align: center;
+  margin: 3%;
+}
+

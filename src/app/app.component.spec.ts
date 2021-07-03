@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'help-i-front-end-open-source'`, () => {
+  it(`should have as title 'learning-center-with-navigation'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('help-i-front-end-open-source');
+    expect(app.title).toEqual('learning-center-with-navigation');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('help-i-front-end-open-source app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('learning-center-with-navigation app is running!');
   });
 });

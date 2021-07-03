@@ -1,16 +1,16 @@
 <mat-card class="card">
   <section class="banner">
-    <img alt="Banner" [src]="gameData.providerInformation.coverUrl">
+    <img alt="Banner" [src]="gameData.backgroundImageUrl">
     <div class="container">
-      <h1>{{gameData.providerInformation.name}}</h1>
+      <h1>{{gameData.name}}</h1>
       <button (click)="navigateToExperts()" class="option-button"> Encuentra a tu coach </button>
       <button (click)="navigateToMaterials()" class="option-button"> Clases basicas </button>
       <button (click)="navigateToMaterials()" class="option-button"> Clases detalladas </button>
     </div>
   </section>
   <section style="text-align: center">
-    <h2>Bienvenido al menu de {{gameData.providerInformation.name}}</h2>
-    <p>{{gameData.providerInformation.summary}}</p>
+    <h2>Bienvenido al menu de {{gameData.name}}</h2>
+    <p>{{gameData.summary}}</p>
   </section>
 
   <section class="experts">
@@ -33,7 +33,7 @@
         <h3>{{trainingMaterial.trainingMaterialId}}</h3>
         <h5> Fecha de publicacion: {{ trainingMaterial.publishedDate }}
           Precio: {{trainingMaterial.price}} {{trainingMaterial.currency}}</h5>
-        <p>{{gameData.providerInformation.summary}}</p>
+        <p>{{gameData.summary}}</p>
         <button class="option-button"> Comprar ahora </button>
         <button class="option-button"> Detalles </button>
       </article>

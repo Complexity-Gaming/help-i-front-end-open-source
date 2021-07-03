@@ -16,10 +16,11 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
-import { FormsModule } from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { HttpClientModule } from "@angular/common/http";
+import { authInterceptorProviders } from './helpers/auth.interceptor';
 import {HelpiApiService} from "./services/helpi-api.service";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { RegisterComponent } from './pages/register/register.component';
@@ -50,24 +51,25 @@ import { ApplicationsComponent } from './pages/applications/applications.compone
     ApplicationComponent,
     ApplicationsComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        MatButtonModule,
-        MatIconModule,
-        MatCardModule,
-        MatGridListModule,
-        MatFormFieldModule,
-        MatInputModule,
-        FormsModule,
-        MatTableModule,
-        MatPaginatorModule,
-        HttpClientModule,
-        MatTooltipModule
-    ],
-  providers: [HelpiApiService],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    HttpClientModule,
+    MatTooltipModule,
+    ReactiveFormsModule
+  ],
+  providers: [HelpiApiService, authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,11 +1,10 @@
 <section class="body">
   <div class="fullName">
-    <h1> *nombre completo*</h1>
+    <h1>{{currentUser.username}} </h1>
 
     <hr>
     <div class="text-line">
-      <h3> Email</h3>
-      <span> *Email* </span>
+      <h3> Email : {{ currentUser.username }}</h3>
     </div>
 
     <button class="button">Change password</button> <br>
@@ -20,18 +19,3 @@
   </span>
 </section>
 
-<div *ngIf="currentUser; else loggedOut">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>{{ currentUser.username }}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p><strong>Token:</strong>
-        {{ currentUser.token }}
-      </p>
-    </mat-card-content>
-  </mat-card>
-</div>
-<ng-template #loggedOut>
-  Please authenticate first.
-</ng-template>

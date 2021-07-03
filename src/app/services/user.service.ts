@@ -15,4 +15,8 @@ export class UserService {
   getAll(): Observable<any> {
     return this.http.get(API_URL);
   }
+
+  getUserById(id: string): Observable<any> {
+    return this.http.get(`https://hep-i-api.herokuapp.com/api/players/email/`+ id);
+  }
 }

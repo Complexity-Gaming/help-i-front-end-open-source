@@ -20,11 +20,12 @@ export class HelpiApiService {
   }
 
   //Get Experts By Id of Game
-  getExpertsByGameId(gameId:number):any{
-    return this.http.get(`https://hep-i-api.herokuapp.com/api/games?offset=0&pageNumber=0&pageSize=0&paged=true/${gameId}/experts`);
+  getExpertsByGameId(gameId:number): any {
+    return this.http.get(`https://hep-i-api.herokuapp.com/api/games/${gameId}/experts?offset=0&pageNumber=0&pageSize=0&paged=true`);
   }
 
   getTrainingMaterialGameId(gameId:number):any{
-    return this.http.get(`https://hep-i-api.herokuapp.com/api/games?offset=0&pageNumber=0&pageSize=0&paged=true/${gameId}/trainings`);
+    return this.http.get(`https://hep-i-api.herokuapp.com/api/games/${gameId}/trainings?offset=0&pageNumber=0&pageSize=0&paged=true`);
   }
+
 }

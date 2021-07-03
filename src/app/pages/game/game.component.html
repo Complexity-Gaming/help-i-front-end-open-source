@@ -17,8 +17,8 @@
     <h3>FAVORITE EXPERTS</h3>
     <div class="container">
       <article *ngFor="let expert of experts.slice(0,3)">
-        <img [src]="expert.personalProfile.profilePictureUrl" alt="url">
-        <h4 style="text-align: center">{{expert.personalProfile.firstName}}</h4><br>
+        <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="url">
+        <h4 style="text-align: center">{{expert.name}}</h4><br>
       </article>
     </div>
   </section>
@@ -27,12 +27,12 @@
     <h3>FAVORITE TRAINING MATERIALS</h3>
     <div class="container" style="background-color: #666173; margin: 30px" *ngFor="let trainingMaterial of trainingMaterials.slice(0,2)" >
       <article>
-        <img class="item-image" [src]="trainingMaterial.videoUri" alt="url">
+        <img class="item-image" [src]="trainingMaterial.detail.videoUri" alt="url">
       </article>
       <article style="text-align: right; color: #FFFFFF">
-        <h3>{{trainingMaterial.trainingMaterialId}}</h3>
-        <h5> Publication date: {{ trainingMaterial.publishedDate }}
-          Price: {{trainingMaterial.price}} {{trainingMaterial.currency}}</h5>
+        <h3>{{trainingMaterial.material.trainingId}}</h3>
+        <h5> Publication date: {{ trainingMaterial.detail.publishedDate }}
+          Price: {{trainingMaterial.detail.price.amount}} {{trainingMaterial.detail.price.currency}}</h5>
         <p>{{gameData.summary}}</p>
         <button class="option-button"> Buy now </button>
         <button class="option-button"> Details </button>

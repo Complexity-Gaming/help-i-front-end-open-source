@@ -3,9 +3,9 @@
     <img alt="Banner" [src]="gameData.backgroundImageUrl">
     <div class="container">
       <h1>{{gameData.name}}</h1>
-      <button (click)="navigateToExperts()" class="option-button"> Find your expert </button>
-      <button (click)="navigateToMaterials()" class="option-button"> Basic training </button>
-      <button (click)="navigateToMaterials()" class="option-button"> Advanced training </button>
+      <button (click)="navigateToExperts(gameData.id)" class="option-button"> Find your expert </button>
+      <button (click)="navigateToMaterials(gameData.id)" class="option-button"> Basic training </button>
+      <button (click)="navigateToMaterials(gameData.id)" class="option-button"> Advanced training </button>
     </div>
   </section>
   <section style="text-align: center">
@@ -17,7 +17,7 @@
     <h3>FAVORITE EXPERTS</h3>
     <div class="container">
       <article *ngFor="let expert of experts.slice(0,3)">
-        <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="url">
+        <img (click)="navigateToExpert(expert.id)" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="url">
         <h4 style="text-align: center">{{expert.name}}</h4><br>
       </article>
     </div>

@@ -59,16 +59,19 @@ export class GameComponent implements OnInit {
 
   }
 
-  navigateToExperts(): void{
-    this.router.navigate([`/experts`])
+  navigateToExperts(id: number): void{
+    this.router.navigate([`game/${id}/experts`])
       .then(() => console.log('Navigated to Experts'));
   }
 
 
-  navigateToMaterials(): void{
-    this.router.navigate([`/materials`])
+  navigateToMaterials(id: number): void{
+    this.router.navigate([`game/${id}/materials`])
       .then(() => console.log('Navigated to Materials'));
   }
 
-
+  navigateToExpert(id: number): void{
+    this.router.navigate([`expert/${id}`])
+      .then(() => console.log('Navigated to Expert'));
+  }
 }

@@ -2,10 +2,10 @@
   <section style="text-align: center">
     <h2>My applications</h2>
   </section>
-  <mat-card><!--for de applications-->
-    <img [src]="" alt="videoApplication">
-    <mat-card-title style="color: #139028">Status: *status*</mat-card-title>
-    <mat-card-content>*description*</mat-card-content>
-    <mat-card-content>Video enviado: *videoApplication*</mat-card-content>
+  <mat-card *ngFor="let application of applications"><!--for de applications-->
+    <img [src]="application.applicationDetails.videoApplication" alt="videoApplication">
+    <mat-card-title style="color: #139028">Status: {{application.status}}</mat-card-title>
+    <mat-card-content>{{application.applicationDetails.description}}</mat-card-content>
+    <mat-card-content>Video enviado: {{application.applicationDetails.videoApplication}}</mat-card-content>
   </mat-card>
 </ng-container>

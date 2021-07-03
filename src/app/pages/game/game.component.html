@@ -34,8 +34,7 @@
         <h5> Publication date: {{ trainingMaterial.detail.publishedDate }}
           Price: {{trainingMaterial.detail.price.amount}} {{trainingMaterial.detail.price.currency}}</h5>
         <p>{{gameData.summary}}</p>
-        <button class="option-button"> Buy now </button>
-        <button class="option-button"> Details </button>
+        <button (click)="buyTrainingMaterial(trainingMaterial.id, user.id)" class="option-button"> Buy now </button>
       </article>
     </div>
   </section>

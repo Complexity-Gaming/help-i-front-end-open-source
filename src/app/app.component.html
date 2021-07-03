@@ -1,14 +1,18 @@
-<mat-toolbar>
-  <mat-toolbar-row>
-    <span>Helpl</span>
-    <span class="default-spacer"></span>
-    <div>
-      <a mat-flat-button routerLink="/" routerLinkActive="active">HOME</a>
-      <a mat-flat-button routerLink="/games" routerLinkActive="active">GAMES</a>
-      <a mat-flat-button routerLink="/about" routerLinkActive="active">ABOUT</a>
-      <a mat-flat-button routerLink="/register" routerLinkActive="active">SIGN UP</a>
-      <a mat-flat-button routerLink="/login" routerLinkActive="active">SIGN IN</a>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+<div id="app">
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <span>Helpl</span>
+      <span class="default-spacer"></span>
+      <div>
+        <a mat-flat-button routerLink="/" routerLinkActive="active">HOME</a>
+        <a mat-flat-button routerLink="/games" routerLinkActive="active">GAMES</a>
+        <a mat-flat-button routerLink="/about" routerLinkActive="active">ABOUT</a>
+        <a mat-flat-button *ngIf="isLoggedIn" routerLink="/profile" routerLinkActive="active">{{username}}</a>
+        <a mat-flat-button *ngIf="isLoggedIn" href (click)="logout()">SIGN OUT</a>
+        <a mat-flat-button *ngIf="!isLoggedIn" routerLink="/register" routerLinkActive="active">SIGN UP</a>
+        <a mat-flat-button *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active">SIGN IN</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
 <router-outlet></router-outlet>

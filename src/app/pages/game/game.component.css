@@ -67,6 +67,10 @@ section{
   border-radius: 300px;
 }
 
+.experts img:hover{
+  transform: translateY(-10px);
+}
+
 .item-image{
   width: 100%;
   height: 100%;

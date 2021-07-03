@@ -1,17 +1,17 @@
 <ng-container class="container" >
   <section style="text-align: center">
-    <h2>Presenting our training materials for *nombre juego* </h2>
+    <h2>Presenting our training materials for {{gameData.name}} </h2>
   </section>
 
   <section class="training" >
-    <div class="container" style="background-color: #666173; margin: 30px"> <!--for trainingMaterial-->
+    <div class="container" style="background-color: #666173; margin: 30px" *ngFor="let trainingMaterial of trainingMaterials"> <!--for trainingMaterial-->
       <article>
-        <img class="item-image" [src]="" alt="">
+        <img class="item-image" [src]="trainingMaterial.detail.videoUri" alt="">
       </article>
       <article style="text-align: right; color: #FFFFFF">
-        <h3>*ID del material*</h3>
-        <h5> Fecha de publicacion: *fecha publicacion*
-          Precio: *precio* *moneda*</h5>
+        <h3>{{trainingMaterial.material.trainingId}}</h3>
+        <h5> Publication date: {{ trainingMaterial.detail.publishedDate }}
+          Price: {{trainingMaterial.detail.price.amount}} {{trainingMaterial.detail.price.currency}}</h5>
         <p>*descripcion*</p>
         <button class="option-button"> BUY NOW </button>
       </article>

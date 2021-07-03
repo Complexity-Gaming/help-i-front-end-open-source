@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "helpi-front-end-open-source": {
+      "hosting": {
+        "help-i-front-end-open-source": [
+          "helpi-front-end-open-source"
+        ]
+      }
+    }
+  }
+}

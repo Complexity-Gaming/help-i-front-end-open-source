@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.currentUser = this.tokenStorageService.getUser();
     if (this.currentUser) {
-      this.userService.getUserById(this.currentUser.token, this.currentUser.username).subscribe(
+      this.userService.getUserByEmail(this.currentUser.username).subscribe(
         response => {
           console.log(response);
           this.user = response;
@@ -27,5 +27,18 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  navigateToApplication(id: number): void{
+    this.router.navigate([`${id}/application`])
+      .then(() => console.log('Navigated to Application'));
+  }
 
+  navigateToApplications(id: number): void{
+    this.router.navigate([`${id}/applications`])
+      .then(() => console.log('Navigated to Applications'));
+  }
+
+  navigateToMaterial(id: number): void{
+    this.router.navigate([`${id}/material`])
+      .then(() => console.log('Navigated to Material'));
+  }
 }

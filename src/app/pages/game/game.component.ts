@@ -3,6 +3,8 @@ import { HelpiApiService } from '../../services/helpi-api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import {Game} from "../../models/game";
 import * as _ from 'lodash';
+import {TokenStorageService} from "../../services/token-storage.service";
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'app-game',
@@ -15,8 +17,10 @@ export class GameComponent implements OnInit {
   gameData: Game = {} as Game;
   experts: Array<any> = [];
   trainingMaterials: Array<any> = [];
+  currentUser: any;
+  user: any;
 
-  constructor(private gamesApi: HelpiApiService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private tokenStorageService: TokenStorageService, private userService: UserService,private gamesApi: HelpiApiService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.gameId = Number(this.route.params.subscribe( params => {
@@ -29,6 +33,18 @@ export class GameComponent implements OnInit {
         return id;
       }
     }))
+
+    this.currentUser = this.tokenStorageService.getUser();
+    if (this.currentUser) {
+      this.userService.getUserByEmail(this.currentUser.username).subscribe(
+        response => {
+          console.log(response);
+          this.user = response;
+        },
+        error => {
+          console.log(error.error.errorMessage);
+        });
+    }
   }
 
   retrieveGame(id: number): void {
@@ -73,5 +89,15 @@ export class GameComponent implements OnInit {
   navigateToExpert(id: number): void{
     this.router.navigate([`expert/${id}`])
       .then(() => console.log('Navigated to Expert'));
+  }
+
+  navigateToMaterial(id: number): void{
+    this.router.navigate([`${id}/material`])
+      .then(() => console.log('Navigated to Material'));
+  }
+
+  buyTrainingMaterial(trainingId: number, userId: number){
+    this.gamesApi.postPlayerTrainingMaterial(userId, trainingId).subscribe();
+    this.navigateToMaterial(userId);
   }
 }

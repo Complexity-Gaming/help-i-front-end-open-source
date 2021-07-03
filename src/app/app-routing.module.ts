@@ -17,7 +17,7 @@ import {ApplicationsComponent} from "./pages/applications/applications.component
 import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', component: GamesComponent},
   { path: 'games', component: GamesComponent },
   { path: 'games/new', component: GameComponent },
   { path: 'games/:id', component: GameComponent },
@@ -25,12 +25,12 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'game/:id/experts', component: ExpertsComponent },
-  { path: ':expert/:id', component: ExpertComponent },
+  { path: 'expert/:id', component: ExpertComponent },
   { path: 'game/:id/materials', component: MaterialsComponent },
-  { path: 'material', component: MaterialComponent },
+  { path: ':id/material', component: MaterialComponent },
   {path:'profile', component:ProfileComponent},
-  {path:'applications', component:ApplicationsComponent},
-  {path:'application', component:ApplicationComponent},
+  {path:':id/applications', component:ApplicationsComponent},
+  {path:':id/application', component:ApplicationComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 
